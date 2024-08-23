@@ -5,9 +5,7 @@ const defaultstate={
 const NumberActionType={
     INT:'increment',
     DIC:'decrement',
-
 }
-
 export const NumberIncrement=(payload=5)=>{
     return {
         type:NumberActionType.INT,
@@ -19,11 +17,7 @@ export const NUmberDeCrement=(payload=5)=>{
         type:NumberActionType.DIC,
         payload,
     }
-
 }
-
-
-
 const reduce=(state=defaultstate,actions)=>{
     if(actions.type===NumberActionType.INT){
         return{
@@ -36,6 +30,5 @@ const reduce=(state=defaultstate,actions)=>{
         }
     }
     return state;
-    
 }
 export default reduce;

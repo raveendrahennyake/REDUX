@@ -9,9 +9,19 @@ const NumberSlicing=createSlice({
     reducers:{
         increment:(state,action)=>{
             number:state.number+action.payload
-        }
+        },
+        decrement:(state,action)=>{
+            number:state.number-action.payload
 
+        }
+         
     }
 
-
 })
+
+//destruction Slicing
+
+ export  const {increment,decrement}=NumberSlicing.actions;
+
+export default NumberSlicing.reducer;
+

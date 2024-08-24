@@ -1,17 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
-    number:0,
+    number:10,
 }
 const NumberSlicing=createSlice({
     name:'number',
     initialState,
     reducers:{
         increment:(state,action)=>{
-            number:state.number+action.payload
+             state.number += action.payload;
+            
         },
         decrement:(state,action)=>{
-            number:state.number-action.payload
+             state.number -= action.payload
 
         }
          

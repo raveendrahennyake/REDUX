@@ -2,13 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     number:10,
+    computer:[]
 }
 const NumberSlicing=createSlice({
     name:'number',
     initialState,
     reducers:{
         increment:(state,action)=>{
-             state.number += action.payload;
+             state.number += action.payload
             
         },
         decrement:(state,action)=>{

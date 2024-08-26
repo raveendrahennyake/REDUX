@@ -4,19 +4,27 @@ const initialState={
     number:10,
     computer:[]
 }
+
+//recursion
+const reducerGen=(key,operator)=>{
+    if(operator==='+'){
+         return (state,action)=>{
+        state[key]+=action.payload
+    }
+    }else if (operator==='-') {
+        return (state,action)=>{
+            state[key]-=action.payload
+        }
+    }
+   
+}
+
 const NumberSlicing=createSlice({
     name:'number',
     initialState,
     reducers:{
-        increment:(state,action)=>{
-             state.number += action.payload
-            
-        },
-        decrement:(state,action)=>{
-             state.number -= action.payload
-
-        }
-         
+        increment:reducerGen('number','+'),
+        decrement:reducerGen('number','-')
     }
 
 })

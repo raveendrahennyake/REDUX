@@ -4,7 +4,6 @@ const initialState={
     number:10,
     computer:[]
 }
-
 //recursion
 const reducerGen=(key,operator)=>{
     if(operator==='+'){
@@ -16,8 +15,9 @@ const reducerGen=(key,operator)=>{
             state[key]-=action.payload
         }
     }
-   
 }
+
+ export const NumberSlicingSelector=(Store)=>Store.numberSlicing
 
 const NumberSlicing=createSlice({
     name:'number',

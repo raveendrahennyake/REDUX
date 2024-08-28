@@ -15,10 +15,10 @@ const LapTop = () => {
   const dispatch = useDispatch();
 
   const handleAddLaptop = () => {
-    // Ensure you are calling the function correctly
+    
     dispatch(
       addLaptop({
-        id: nanoid(), // Make sure this is a function call
+        id: nanoid(), 
         price: price,
         spec: {
           cpu: cpu,

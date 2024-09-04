@@ -6,8 +6,6 @@ const initialState=[{
 
 ]
 
-
-
 export const laptopSelectorSlicing=(store)=>store.lapTopSlicing
 //chage function
 

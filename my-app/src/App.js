@@ -35,6 +35,8 @@ if(Array.isArray(card)){
 
   <h2> Total Item Is : {card.length}</h2>
   <h3>Totla Price is : {Total}</h3>
+
+  <h>TEST</h>
       
      
       

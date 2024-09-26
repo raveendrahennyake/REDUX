@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import PostSlice from "../reducess/PostSlice";
+import NumberSlice from "../reducess/NumberSlice";
 
 
 const store=configureStore({
     reducer:{
-        post:PostSlice
+        post:PostSlice,
+        number:NumberSlice
         
        
         

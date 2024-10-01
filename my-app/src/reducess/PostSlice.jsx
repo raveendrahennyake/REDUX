@@ -1,10 +1,15 @@
-import { createAsyncThunk, createSelector, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createEntityAdapter,createSlice } from "@reduxjs/toolkit";
 
-const initialState={
-    data:[],
+const postState=createEntityAdapter(
+    {selectId:(element)=>element.id}
+    
+    )
+
+const initialState=postState.getInitialState({
     loading:'idle',
     error:null 
-}
+
+}    )
 
  export const getPost=createAsyncThunk('getPost',async ()=>{
     try {
@@ -34,8 +39,8 @@ const PostSlice=createSlice({
 
         builder.addCase(getPost.fulfilled,(state,action)=>{
             state.loading="data load complete"
-            state.data=action.payload
-
+            postState.addMany(state,action.payload)
+          
         })
         builder.addCase(getPost.rejected,(state)=>{
             state.loading="data loading failed"
@@ -43,17 +48,18 @@ const PostSlice=createSlice({
            
         })
     }
-        
     
 })
 
-
 export const SelectAllpost=(store)=>store.post
-export const  selectAllpost=createSelector([SelectAllpost],(post)=>{
-    console.log("post is push")
-    return post
 
-})
+export const {
+    selectAll,
+    selectById,
+    selectEntities,
+    selectTotal,
+    selectIds 
+} =postState.getSelectors((store)=>store.post);
 
 export default PostSlice.reducer;
 

@@ -1,19 +1,23 @@
 
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import { getPost, selectAllpost } from './reducess/PostSlice';
+import { getPost, selectAll, selectById, selectEntities, selectIds} from './reducess/PostSlice';
 import { Decrement, Increament, NumberSelect } from './reducess/NumberSlice';
 
 function App() {
-  const post=useSelector(selectAllpost);
-  const number=useSelector(NumberSelect);
+  
+  // const number=useSelector(NumberSelect);
 
-  console.log(post);
-  console.log(number);
+  const selectId=useSelector(selectIds);
+
+  
+  // console.log(number);
+
+  console.log(selectId);
   const dispatch=useDispatch();
   return (
     <div>
-      <h1>{number}</h1>
+      
 
       <button onClick={()=>dispatch(Increament("sam",52,"Badulla",))}>INCREASE</button>
 
@@ -21,6 +25,10 @@ function App() {
       
 
       <button style={{marginTop:"20px"}} onClick={()=>dispatch(getPost())}>NEXT</button>
+
+      <div>
+        <h1>{selectId}</h1>
+      </div>
 
 
      

@@ -4,18 +4,13 @@ import './App.css';
 import { getPost, selectAllpost } from './reducess/PostSlice';
 import { Decrement, Increament, NumberSelect } from './reducess/NumberSlice';
 
-
 function App() {
   const post=useSelector(selectAllpost);
-
   const number=useSelector(NumberSelect);
 
   console.log(post);
   console.log(number);
   const dispatch=useDispatch();
- 
- 
-
   return (
     <div>
       <h1>{number}</h1>

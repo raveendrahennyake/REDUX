@@ -4,7 +4,7 @@ const initialState={
     number:0,
     User:[]
 }
-
+//prepare function
 export const Increament=createAction('Increment',(name,age,city)=>{
     return {
         payload:{
